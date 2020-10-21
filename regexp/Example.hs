@@ -25,11 +25,12 @@ dict = fromJust (match path filename)
 
 -- Access the components of the dictionary
 
-x = getField @"base" dict
-y = getField @"dir" dict
-z = getField @"ext" dict
+x = getField @"base" dict -- : String
+y = getField @"dir" dict  -- : [String]
+z = getField @"ext" dict  -- :  Maybe String
 
-w = getField @"f" dict
+w = getField @"f" dict    -- : Error: "I couldn't find a capture group f
+                          --           in {base, dir, ext} "
 
 
 
